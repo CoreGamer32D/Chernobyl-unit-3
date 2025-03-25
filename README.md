@@ -5,7 +5,7 @@
   <br>
   <img src="https://img.shields.io/badge/Version-1.3.0-blue" alt="Version 1.3.0" />
   <img src="https://img.shields.io/badge/Release-March%2019%2C%202025-green" alt="Release Date" />
-  <img src="https://img.shields.io/badge/Roblox-Platform" alt="Platform" />
+  <img src="https://img.shields.io/badge/ROBLOX-777BB4?style=for-the-badge&logo=ROBLOX&logoColor=white" alt="Platform" />
   <img src="https://img.shields.io/badge/Game-NR2003-red" alt="Game" />
 </div>
 
