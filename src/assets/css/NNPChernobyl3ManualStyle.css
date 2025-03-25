@@ -1,0 +1,202 @@
+:root {
+    --ifm-color-primary: #25c2a0;
+    --ifm-color-primary-dark: #21af90;
+    --ifm-color-primary-darker: #1fa588;
+    --ifm-color-primary-darkest: #1a8870;
+    --ifm-color-primary-light: #29d5b0;
+    --ifm-color-primary-lighter: #32d8b4;
+    --ifm-color-primary-lightest: #4fddbf;
+    --ifm-code-font-size: 95%;
+    --ifm-background-color: #1b1b1d;
+    --ifm-background-surface-color: #242526;
+    --ifm-hr-border-color: #444950;
+    --text-color: #f5f6f7;
+    --text-color-secondary: #d0d0d0;
+    --note-background: #293846;
+    --note-border: #35495e;
+    --warning-background: #4a3425;
+    --warning-border: #822;
+    --table-stripe: #39393b;
+    --header-color: var(--ifm-color-primary);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--text-color);
+    background-color: var(--ifm-background-color);
+}
+
+h1, h2 {
+    color: var(--header-color);
+    border-bottom: 2px solid var(--header-color);
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: var(--header-color);
+    margin-top: 24px;
+}
+
+a {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--ifm-color-primary-lighter);
+    text-decoration: underline;
+}
+
+.toc {
+    background-color: var(--ifm-background-surface-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--ifm-color-primary);
+}
+
+.toc h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ifm-hr-border-color);
+}
+
+.toc ul {
+    padding-left: 20px;
+}
+
+.toc a {
+    color: var(--text-color-secondary);
+}
+
+.toc a:hover {
+    color: var(--ifm-color-primary);
+}
+
+.note {
+    background-color: var(--note-background);
+    border-left: 4px solid var(--note-border);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.warning {
+    background-color: var(--warning-background);
+    border-left: 4px solid var(--warning-border);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid var(--ifm-hr-border-color);
+    padding: 10px;
+}
+
+th {
+    background-color: var(--ifm-background-surface-color);
+    text-align: left;
+    color: var(--ifm-color-primary);
+}
+
+tr:nth-child(even) {
+    background-color: var(--table-stripe);
+}
+
+.figures {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--ifm-background-surface-color);
+    border-radius: 8px;
+}
+
+.figures h2 {
+    margin-top: 0;
+}
+
+.figure-container {
+    margin-bottom: 30px;
+}
+
+.figure-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+.figure-caption {
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--text-color-secondary);
+}
+
+.steps {
+    padding-left: 20px;
+}
+
+.steps li {
+    margin-bottom: 12px;
+}
+
+/* Badges style Docusaurus */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+.badge-important {
+    background-color: #f04;
+    color: white;
+}
+
+.badge-note {
+    background-color: var(--ifm-color-primary);
+    color: white;
+}
+
+/* Elements de carte style Docusaurus */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: var(--ifm-background-surface-color);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--ifm-hr-border-color);
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 1rem;
+}

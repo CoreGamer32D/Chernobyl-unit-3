@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactor Operations Hub</title>
+    <meta name="author" content="Matthew Wilhite">
+    <meta name="description" content="This is Chernobyl Unit 3"
+    <meta property="og:title" content="Chernobyl Unit 3 - Documentation">
+    <meta property="og:type" content="website">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./src/assets/images/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/assets/css/NPPChernobyl3Style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/assets/js/NPPChernobyl3.js"></script>
+</head>
+<body>
+    <div class="bg-particle" style="width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="bg-particle" style="width: 200px; height: 200px; top: 40%; right: 10%; animation-delay: 5s;"></div>
+    <div class="bg-particle" style="width: 250px; height: 250px; bottom: 10%; left: 20%; animation-delay: 10s;"></div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-container">
+                    <img src="./src/assets/images/Logo.png" alt="Logo">
+                    <span>Reactor Operations Hub</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documentation"><i class="fas fa-book me-1"></i> Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources"><i class="fas fa-tools me-1"></i> Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="animate-fadeIn">
+                <div class="hero-badge" aria-label="Official Documentation">
+                    <i class="fas fa-shield-alt"></i> Official Documentation
+                </div>
+                <img src="./src/assets/images/azda.png" id="text" alt="Azda Reactor Documentation Logo" loading="lazy">
+                <p class="subtitle">
+                    Comprehensive operational manuals and safety protocols for reactor management and emergency procedures.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <div class="container">
+        <div class="row stats-row animate-fadeIn delay-200">
+            <div class="col-md-4 stat-item">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Available Languages</div>
+            </div>
+        </div>
+    </div>
+
+    <section id="documentation" class="cards-container">
+        <div class="container">
+            <h2 class="section-title animate-fadeIn">Available Manuals</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-slideInLeft delay-100">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <div class="flag-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" class="flag" alt="UK Flag">
+                            </div>
+                            <h3 class="card-title">English Manual</h3>
+                            <span class="status-badge available">
+                                <span class="status-indicator"></span>
+                                Available
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Complete operational instructions in English for reactor startup, control procedures, emergency responses, and safety protocols. Updated with latest technical specifications and regulatory requirements.
+                            </p>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>Doc Format</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Last Updated: Mar 2025</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="./src/Manual/English/index.html" class="btn btn-primary w-100">
+                                    <i class="fas fa-book-open"></i> View Manual
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-fadeIn delay-200">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <div class="flag-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" class="flag" alt="French Flag">
+                            </div>
+                            <h3 class="card-title">Manuel Français</h3>
+                            <span class="status-badge available">
+                                <span class="status-indicator"></span>
+                                Available
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Instructions complètes en français pour le démarrage du réacteur, les procédures de contrôle, les réponses d'urgence et les protocoles de sécurité. Mise à jour avec les dernières spécifications techniques.
+                            </p>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>Formater le document</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Mis à jour: Mar 2025</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="./src/Manual/French/index.html" class="btn btn-primary w-100">
+                                    <i class="fas fa-book-open"></i> Voir le Manuel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <section id="resources" class="quicklink-section">
+        <div class="container">
+            <h2 class="section-title animate-fadeIn">Essential Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6 animate-fadeIn delay-100">
+                    <div class="quicklink-card">
+                        <div class="quicklink-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="quicklink-title">Emergency Procedures</h3>
+                        <p class="quicklink-desc">Critical response protocols for all alert levels</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 animate-fadeIn delay-200">
+                    <div class="quicklink-card">
+                        <div class="quicklink-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="quicklink-title">Checklists</h3>
+                        <p class="quicklink-desc">Standardized operational verification lists</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 animate-fadeIn delay-300">
+                    <div class="quicklink-card">
+                        <div class="quicklink-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="quicklink-title">Maintenance Guides</h3>
+                        <p class="quicklink-desc">Scheduled service and repair protocols</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 animate-fadeIn delay-400">
+                    <div class="quicklink-card">
+                        <div class="quicklink-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="quicklink-title">Training Videos</h3>
+                        <p class="quicklink-desc">Visual education resources for all staff</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="./src/assets/images/Logo.png" alt="Logo">
+                        <div class="footer-logo-text">Reactor Operations Hub</div>
+                    </div>
+                    <p class="footer-description">
+                        Dedicated to providing comprehensive and accessible documentation for safe reactor operations, maintenance protocols, and emergency procedures.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Site Map</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#documentation"><i class="fas fa-chevron-right"></i> Manuals</a></li>
+                        <li><a href="#resources"><i class="fas fa-chevron-right"></i> Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Safety Bulletins</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Regulatory Updates</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Training Materials</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Technical Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Reactor Operations Hub - All Rights Reserved</p>
+                <p class="mt-2">A comprehensive resource for nuclear reactor operation documentation and safety protocols.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

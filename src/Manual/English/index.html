@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactor Operation Manual</title>
+    <link rel="stylesheet" href="../../assets/css/NNPChernobyl3ManualStyle.css" type="text/css">
+</head>
+<body>
+    <h1>Reactor Operation Manual</h1>
+    
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#list-figures">List of Figures</a></li>
+            <li><a href="#abbreviations">List of Accepted Abbreviations</a></li>
+            <li><a href="#preliminary-checks">Preliminary Checks</a></li>
+            <li><a href="#pulling-rods">Pulling Rods and Achieving Criticality</a></li>
+            <li><a href="#starting-tg5">Starting Turbogenerator 5 and Synchronizing it to the Power Grid</a></li>
+            <li><a href="#starting-tg6">Starting Turbogenerator 6 and Synchronizing it to the Power Grid</a></li>
+            <li><a href="#electrical-switchover">Electrical Power Switchover from Transformer to Generator Auxiliary Bus</a></li>
+            <li><a href="#power-ramp-up">Power Ramp-up to Demand</a></li>
+            <li><a href="#auxiliary-systems">Auxiliary and Emergency Systems</a>
+                <ul>
+                    <li><a href="#injecting-water">Injecting Water with ECCS</a></li>
+                    <li><a href="#starting-edg">Starting and Connecting the EDGs to the Main Buses</a></li>
+                    <li><a href="#disabling-protection">Disabling the Automatic Protection Systems</a></li>
+                </ul>
+            </li>
+            <li><a href="#emergency-procedures">Emergency Procedures</a>
+                <ul>
+                    <li><a href="#tg5-trip">TG-5 Trip</a></li>
+                    <li><a href="#tg6-trip">TG-6 Trip</a></li>
+                    <li><a href="#transformer-failure">Transformer Failure</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="list-figures" class="figures">
+        <h2>List of Figures</h2>
+        <div class="figure-container">
+            <p>Figure 1. Turbine Control Panel</p>
+            <img src="../../assets/images/Manual/EnglishIMGS/turbinepanel.jpg" alt="Turbine Control Panel" />
+        </div>
+        <div class="figure-container">
+            <p>Figure 2. Electrical Panel</p>
+            <img src="../../assets/images/Manual/EnglishIMGS/elecpanel.jpg" alt="Electrical Panel" />
+        </div>
+        <div class="figure-container">
+            <p>Figure 3. SIUB Pult</p>
+            <img src="../../assets/images/Manual/EnglishIMGS/siubpult.jpg" alt="SIUB Pult" />
+        </div>
+        <div class="figure-container">
+            <p>Figure 4. SIUR Pult</p>
+            <img src="../../assets/images/Manual/EnglishIMGS/siurpanel.jpg" alt="SIUR Pult" />
+        </div>
+    </div>
+
+    <h2 id="abbreviations">List of Accepted Abbreviations</h2>
+    <table>
+        <tr>
+            <th>Abbreviation</th>
+            <th>Meaning</th>
+        </tr>
+        <tr>
+            <td>AZ (АЗ)</td>
+            <td>Emergency Protection [system] (аварийная защита)</td>
+        </tr>
+        <tr>
+            <td>AR (АР)</td>
+            <td>Automatic Regulator (Автоматический Регулятор)</td>
+        </tr>
+        <tr>
+            <td>ARM (АРМ)</td>
+            <td>Automatic Regulator in the Low Power Range (Автоматический Регулятор Малой Мощности)</td>
+        </tr>
+        <tr>
+            <td>AZS (АЗС)</td>
+            <td>Automatic Reactor Period Protection (Аварийная защита по скорости)</td>
+        </tr>
+        <tr>
+            <td>AZM (АЗМ)</td>
+            <td>Automatic Reactor Power Protection in the Operating Range (Аварийная Защита по уровню Мощности)</td>
+        </tr>
+        <tr>
+            <td>CR-O (БЩУ-О)</td>
+            <td>Main Control Room (Блочный Щит Управления Оперативный)</td>
+        </tr>
+        <tr>
+            <td>ECCS/SAOR (САОР)</td>
+            <td>Emergency Core Cooling System (Система Аварийного Охлаждения Реактора)</td>
+        </tr>
+        <tr>
+            <td>MCP (ГЦН)</td>
+            <td>Main Circulation Pump (Главный Циркуляционный Насос)</td>
+        </tr>
+        <tr>
+            <td>MTK (МТК)</td>
+            <td>Mnemonic Control Table / Cartogram (МнемоТабло Контроля)</td>
+        </tr>
+        <tr>
+            <td>MFCC (КМПЦ)</td>
+            <td>Multiple Forced Circulation Circuit (Контур Многократной Принудительной Циркуляции)</td>
+        </tr>
+        <tr>
+            <td>MW/ MWt / MWe (МВт / МВт (т) / МВт(э))</td>
+            <td>Megawatt / Thermal / Electrical (МегаВатт / Термальный / Электрика)</td>
+        </tr>
+        <tr>
+            <td>SS (БС)</td>
+            <td>Steam Separators (Барабан-Сепаратор)</td>
+        </tr>
+        <tr>
+            <td>TG (ТГ)</td>
+            <td>TurboGenerator (ТурбоГенератор)</td>
+        </tr>
+    </table>
+
+    <h3>Staff Titles</h3>
+    <table>
+        <tr>
+            <th>Abbreviation</th>
+            <th>Meaning</th>
+        </tr>
+        <tr>
+            <td>BSS (НСБ)</td>
+            <td>Block Shift Supervisor (Начальник Смены Блока)</td>
+        </tr>
+        <tr>
+            <td>SIUR (СИУР)</td>
+            <td>Senior Reactor Control Engineer (Старший Инженер Управления Реактором)</td>
+        </tr>
+        <tr>
+            <td>SIUB (СИУБ)</td>
+            <td>Senior Block Control Engineer (Старший Инженер Управления Блоком)</td>
+        </tr>
+        <tr>
+            <td>SIUT (СИУТ)</td>
+            <td>Senior Turbine Control Engineer (Старший Инженер Управления Турбинами)</td>
+        </tr>
+    </table>
+
+    <h2 id="preliminary-checks">Preliminary Checks</h2>
+    <ol class="steps">
+        <li>On the electrical panel of the SIUT pult (see Figure 2. Electrical Panel), check that the PWA-3 – 5PA relay is set to ON (Move the switch to the RIGHT side)</li>
+        <li>Check that the PWB-3 5PB relay is set to ON.</li>
+        <li>Check that the PWA-3 6PA relay is set to ON.</li>
+        <li>Check that the PWA-3 6PB relay is set to ON.</li>
+        <li>On the SIUB pult (see Figure 3. SIUB Pult.), OPEN MCP 11,12 and 21,22 by moving the П1 - 3311, П1 – 3321, and П2 – 3311, П2 – 3321 switches to the OPEN position (RIGHT side) until the corresponding gauges show the valves are at 100%.</li>
+        <li>START MCP 11,12 and 21,22 by holding down the RED button above the ГЦН-11, ГЦН-12, ГЦН-21, and ГЦН-22 labels until the Amperage (A) narrow profile devices display that the started MCP's are at 600 amps.</li>
+        <li>On the farthest right panel of the SIUB pult, check that the Automatic Pressure Relief for БС11,21,12,22 is ON by moving it to the HORIZONTAL position.</li>
+    </ol>
+    
+    <div class="note">
+        <p>Note: the middle automatic relief switch is for BOTH steam separators. You only need that one on.</p>
+        <p>Note 2: If 2 MCP's are already on per side, you do not need to turn on any others until you reach higher power.</p>
+    </div>
+
+    <h2 id="pulling-rods">Pulling Rods and Achieving Criticality</h2>
+    <ol class="steps">
+        <li>On the SIUR pult (see Figure 4. SIUR Pult), PULL the AZ RODS to the UPPER END CAPS. AZ rods are marked by the small flashing red light above their selector. There is 24 AZ RODS in total. AZ selsyns are always red.</li>
+        <li>PULL the PK-AZ rods to the UPPER END CAPS. PK-AZ rods are marked by their selector flashing. PK-AZ selsyns are always white.</li>
+        <li>PULL the AR1,AR2,ARM rods to 3.5m. AR rods are Light Green.</li>
+        <li>PULL RR,LAR,USP rods AS REQUIRED. USP rods are yellow. LAR rod selectors are white or blue and are illuminated but are not flashing. LAR selsyns are always blue. RR rod selectors are white or blue and are not illuminated or flashing. RR selsyns are always gray.</li>
+        <li>When the Change in Thermal Power goes above 0, you will start gaining thermal power. Keep raising thermal power until about 700MW(t).</li>
+        <li>When you hit 160MW(t), SWITCH the АЗС switch into OPERATING MODE.</li>
+        <li>When the pressure in the SS reaches 6 to 7.5 MPa you are clear to start the turbines.</li>
+    </ol>
+    
+    <div class="note">
+        <p>Note: Starting and operating mode restrictions prevent excessive changes in reactor power, reactor power itself, or temperature. In starting mode, warnings occur at a 20 power change, 100MW reactor power, and 100°C, with trips at 30, 250MW, and 130°C. In operating mode, warnings are at 40 power change, 3320MW, and 300°C, with trips at 50, 3400MW, and 330°C. You have 5 seconds to correct any issues before the reactor trips.</p>
+        <p>Note 2: The digital clock is NOT the MW(t) gauge. The MW(t) gauge is only on the SIUR pult.</p>
+    </div>
+
+    <h2 id="starting-tg5">Starting Turbogenerator 5 and Synchronizing it to the Power Grid</h2>
+    <ol class="steps">
+        <li>On the SIUT pult (see Figure 1. Turbine Control Panel) un-isolate TG-5 from the main steam loop by moving the two ISOLATION VALVES to the RIGHT position until all the red lights are on.</li>
+        <li>Move the STEAM INLET valve to the RIGHT position until the corresponding valve reaches 15 – 17%, while ensuring that the acceleration(α) does not go above 250. Make small adjustments to the valve until the turbine RPM reaches 3000 and the "CORRECT SPEED" light illuminates.</li>
+        <li>On the generator panel of the SIUT pult (see Figure 2. Electrical Panel) enable the EXCITER RELAY on TG-5 by moving the switch to the RIGHT position.</li>
+        <li>Enable the TG-5 MAIN BUS.</li>
+        <li>ADJUST the TG-5 EXCITATION VOLTAGE to 474 V by moving the ADJUST EXICTATION switch to the RIGHT position.</li>
+        <li>On the synchronization panel (which is in front of the SIUT pult), PRESS the SELECT TG-5 button, then SELECT the SYNCHROSCOPE that you want to use (left or right position)</li>
+        <li>When the SYNCHROSCOPE is near the TOP-MIDDLE position, SYNCHRONIZE TG-5 by moving the SYNCHRONIZE TG-5 switch to the RIGHT position. If TG-5 does not synchronize, you either tried closing the breaker at the wrong synchroscope position, or TG-5 is moving too fast. Try keeping the TG-5 FREQUENCY at 50.01 to 50.10.</li>
+        <li>IF TG-5 successfully synchronizes, move the STEAM INLET valve to the RIGHT POSITION until TG-5 POWER reaches 150 MW(e).</li>
+        <li>On the generator panel of the SIUT pult, ENABLE TG-5 AUXILIARY BUS.</li>
+        <li>Ramp up reactor power to no more than 900MW(t)</li>
+    </ol>
+    
+    <div class="note">
+        <p>Note: The turbine trips at 3150RPM. If your acceleration goes above 250, it will trip within 3.2 seconds, though the time delay shortens as your acceleration goes up.</p>
+        <p>Note 2: You can also watch stator voltage to get the correct excitation. It should be at 20kV, though stator voltage moves if your turbine RPM is moving, so watch if it's at the correct speed.</p>
+    </div>
+
+    <h2 id="starting-tg6">Starting Turbogenerator 6 and Synchronizing it to the Power Grid</h2>
+    <ol class="steps">
+        <li>Un-isolate TG-6 from the main steam loop by moving the two ISOLATION VALVES to the RIGHT position until all the red lights are on.</li>
+        <li>Move the STEAM INLET valve to the RIGHT position until the corresponding valve reaches 15 – 17%, while ensuring that the acceleration(α) does not go above 250. Make small adjustments to the valve until the turbine RPM reaches 3000 and the "CORRECT SPEED" light illuminates.</li>
+        <li>Enable the EXCITER RELAY on TG-6 by moving the switch to the RIGHT position.</li>
+        <li>ADJUST the TG-6 EXCITATION VOLTAGE to 474 V by moving the ADJUST EXICTATION switch to the RIGHT position.</li>
+        <li>Enable TG-6 MAIN BUS.</li>
+        <li>PRESS the SELECT TG-6 button, then SELECT the SYNCHROSCOPE that you want to use (left or right position)</li>
+        <li>When the SYNCHROSCOPE is near the TOP-MIDDLE position, SYNCHRONIZE TG-6 by moving the SYNCHRONIZE TG-6 switch to the RIGHT position. If TG-6 does not synchronize, you either tried closing the breaker at the wrong synchroscope position, or TG-6 is moving too fast. Try keeping the TG-6 FREQUENCY at 50.01 to 50.10.</li>
+        <li>IF TG-6 successfully synchronizes, move the STEAM INLET valve to the RIGHT POSITION until TG-6 POWER reaches 150 MW(e).</li>
+        <li>ENABLE TG-6 AUXILIARY BUS.</li>
+    </ol>
+
+    <h2 id="electrical-switchover">Electrical Power Switchover from Transformer to Generator Auxiliary Bus</h2>
+    <ol class="steps">
+        <li>On the electrical panel of the SIUT pult, ENABLE 5PA relay by moving the switch to the RIGHT position.</li>
+        <li>QUICKLY DISABLE PWA-3 – 5PA RELAY OR THE BREAKER WILL TRIP. YOU HAVE 4 SECONDS.</li>
+        <li>Repeat the same steps with 5PB to 6PB relays.</li>
+    </ol>
+    
+    <div class="note">
+        <p>Note: Not switching over from transformer power to generator power will cause power issues with the pumps, the transformers will not have enough capacity to power them at high thermal power.</p>
+    </div>
+
+    <h2 id="power-ramp-up">Power Ramp-up to Demand</h2>
+    <ol class="steps">
+        <li>Increase reactor power as needed, while staying within thermal power change regulations.</li>
+        <li>Ramp up turbine power as thermal power rises, ensure the pressure in the SS does not drop below 6 MPa.</li>
+        <li>At 1600MW(t) - 1920MW(t), ENABLE one more MCP per side, if required.</li>
+        <li>As you near demand, lower the thermal power change rate, when you are on demand, stop changing the thermal power. Ensure TG-5 and TG-6 load are balanced, and the pressure in the SS is not below 6 MPa.</li>
+    </ol>
+    
+    <div class="note">
+        <p>Challenge: After both turbines are synchronized, more experienced operators can try operating the reactor without using auto relief for more realism. If the turbines and reactor are properly set up, you should not need the auto reliefs.</p>
+    </div>
+
+    <h2 id="auxiliary-systems">Auxiliary and Emergency Systems</h2>
+    <p>This section covers the operation of the ECCS, EDG, and disabling or enabling of the reactor automatic protection systems. These systems are located on the "САОР" panel at the rear of the control room.</p>
+
+    <h3 id="injecting-water">Injecting Water with ECCS</h3>
+    <p>Enable "SAOR Injection – R" and "SAOR Injection – L" by moving their switches to the RIGHT position until their respective red light starts blinking.</p>
+    <p>There are 2 subsystems for ECCS. Each injects 1400 m3/h of water.</p>
+    
+    <div class="warning">
+        <p>Note: ENABLING ECCS INJECTION WILL TRIP THE REACTOR. DO NOT USE IT IF YOU DO NOT NEED IT.</p>
+    </div>
+
+    <h3 id="starting-edg">Starting and Connecting the EDGs to the Main Buses</h3>
+    <ol class="steps">
+        <li>Enable the "Fuel Supply" and "Ignition" by moving their switches to the RIGHT position.</li>
+        <li>When the red light above the "Ignition" switch stops blinking and stops on red, you can enable the "Bus Connection" switch by moving it to the RIGHT position.</li>
+        <li>When the EDGs are connected, they will take the load of the PWA-3 or PWB-3 transformers, meaning the PWA-3 and PW3-B relays should be active for the EDGs to take effect.</li>
+    </ol>
+    
+    <div class="note">
+        <p>Each EDG produces 8MW(e). There are 3 EDGs in total.</p>
+    </div>
+
+    <h3 id="disabling-protection">Disabling the Automatic Protection Systems</h3>
+    <p>Call the phone on the SIUR pult. When the SKALA operator answers, say "Enable" / "Disable" in the game chat. When the SKALA operator asks you to confirm, say "Yes" in the game chat.</p>
+
+    <h2 id="emergency-procedures">Emergency Procedures</h2>
+    
+    <h3 id="tg5-trip">TG-5 Trip</h3>
+    <p><strong>Expected Operator Actions</strong></p>
+    <ol class="steps">
+        <li>Re-establish power to 5PA and 5PB by:
+            <ul>
+                <li>CLOSING the PWA-3 – 5PA Relay</li>
+                <li>CLOSING the PWB-3 – 5PB Relay</li>
+                <li>OPENING the 5PA Relay</li>
+                <li>OPENING the 5PB Relay</li>
+            </ul>
+        </li>
+        <li>Roll back the MCPs to a 2x3 setting.</li>
+        <li>If TG-6 has also tripped:
+            <ul>
+                <li>Roll back the MCPs to a 2x2 setting.</li>
+            </ul>
+        </li>
+        <li>If power is still not restored:
+            <ul>
+                <li>Check that the PWA-3 Transformer is connected. There will be a green light illuminated above the switch if the PWA-3 transformer is connected.</li>
+            </ul>
+        </li>
+        <li>If power is still not restored:
+            <ul>
+                <li>Start and connect the Emergency Diesel Generators (refer to the manual for starting and connecting instructions).</li>
+            </ul>
+        </li>
+        <li>If TG-5 is damaged (2 illuminated bearing vibration lights or more) due to an Emergency Unloading:
+            <ul>
+                <li>Call the Turbine Technician to repair TG-5. Do not attempt to start up a damaged turbine.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <div class="note">
+        <p>Note: During an unexpected TG-5 Trip, a Reactor Trip will occur due to the loss of power to the 5PB relay.</p>
+    </div>
+
+    <h3 id="tg6-trip">TG-6 Trip</h3>
+    <p><strong>Expected Operator Actions</strong></p>
+    <ol class="steps">
+        <li>Re-establish power to 6PA and 6PB by:
+            <ul>
+                <li>CLOSING the PWA-3 – 6PA Relay</li>
+                <li>CLOSING the PWB-3 – 6PB Relay</li>
+                <li>OPENING the 6PA Relay</li>
+                <li>OPENING the 6PB Relay</li>
+            </ul>
+        </li>
+        <li>Roll back the MCPs to a 3x2 setting.</li>
+        <li>If TG-5 has also tripped:
+            <ul>
+                <li>Roll back the MCPs to a 2x2 setting.</li>
+            </ul>
+        </li>
+        <li>If power is still not restored:
+            <ul>
+                <li>Check that the PWB-3 Transformer is connected. There will be a green light illuminated above the switch if the PWB-3 transformer is connected.</li>
+            </ul>
+        </li>
+        <li>If power is still not restored:
+            <ul>
+                <li>Start and connect the Emergency Diesel Generators (refer to the manual for starting and connecting instructions).</li>
+            </ul>
+        </li>
+        <li>If TG-6 is damaged (2 illuminated bearing vibration lights or more) due to an Emergency Unloading:
+            <ul>
+                <li>Call the Turbine Technician to repair TG-6. Do not attempt to start up a damaged turbine.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <div class="note">
+        <p>Note: During an unexpected TG-6 Trip, a Reactor Power Excursion may occur due to loss of core flow.</p>
+        <p>Note: An Automatic Reactor Trip may occur as a result of the Reactor Power Excursion.</p>
+    </div>
+
+    <h3 id="transformer-failure">Startup Transformer Failure</h3>
+    <p><strong>Expected Operator Actions</strong></p>
+    <ol class="steps">
+        <li>If TG-5 and TG-6 are not connected to the relays:
+            <ul>
+                <li>Start and Connect DG-1, DG-2, and DG-3.</li>
+                <li>Ensure the PWA/B relays are connected. These are essential for the DGs to power the relays.</li>
+                <li>Roll back the MCPs to a 1x1 setting.</li>
+            </ul>
+        </li>
+        <li>If faster core cooling is desired:
+            <ul>
+                <li>Start SAOR-1 Left and Right-side Injection.</li>
+                <li>Start SAOR-2 Left and Right-side Injection.</li>
+            </ul>
+        </li>
+        <li>If TG-5 and TG-6 are providing power to the relays, no operator action is required.</li>
+    </ol>
+    
+    <div class="note">
+        <p>The transformer failure must be waited out, there is nothing operators can do to manually fix it.</p>
+    </div>
+    
+    <p>Even during a transformer failure, it is possible to start the reactor after it is tripped. To achieve this:</p>
+    <ol class="steps">
+        <li>Ensure core flow is greater than 10,000 m³/h on each loop by starting SAOR injection.</li>
+        <li>Pull rods as normal.</li>
+        <li>Stabilize reactor power at 1000mw.</li>
+        <li>Run up turbines as normal, 2000RPM or more is required.</li>
+        <li>Ensure both AUX buses are on.</li>
+        <li>Power 5PA/B 6PA/B relays as normal.</li>
+        <li>If a 2x2 pump configuration can be established:
+            <ul>
+                <li>Disable SAOR pumps.</li>
+                <li>Adjust steam load or reactor power as needed to maintain a 2x2 pump configuration.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--ifm-hr-border-color); text-align: center; color: var(--text-color-secondary);">
+        <p>Redesign - Lurmog</p>
+        <p>Operations Manual - Avenir_3Bravo</p>
+    </footer>
+</body>
+</html>
