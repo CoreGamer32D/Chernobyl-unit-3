@@ -21,7 +21,7 @@
 
 ## Credits
 
-- Code adaptation from Sokirr and Lurmog by [CoreGamer32]
+- Code adaptation from Sokirr and Lurmog by CoreGamer32
 - Special thanks to the Chernobyl Unit 3 community
 
 ## Support
