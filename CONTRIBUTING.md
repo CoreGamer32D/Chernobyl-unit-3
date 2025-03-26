@@ -73,11 +73,11 @@ There are many ways to contribute to our project:
 ### Local Development
 1. Clone your forked repository
    ```bash
-   git clone https://github.com/[CoreGamer32D]/chernobyl_unit_3.git
+   git clone https://github.com/[CoreGamer32D]/Chernobyl-unit-3.git
    ```
 2. Navigate to the project directory
    ```bash
-   cd chernobyl_unit_3
+   cd Chernobyl-unit-3
    ```
 3. Open the project in your preferred editor
 4. Use a local server to test changes

@@ -45,7 +45,7 @@ A Roblox website project dedicated to the Chernobyl Unit 3 on roblox, showcasing
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/[CoreGamer32D]/chernobyl_unit_3.git
+   git clone https://github.com/[CoreGamer32D]/Chernobyl_unit_3.git
    ```
 
 2. Open the project directory
@@ -69,7 +69,7 @@ A Roblox website project dedicated to the Chernobyl Unit 3 on roblox, showcasing
 For assistance, bug reports, or suggestions:
 
 - **Discord**: `wilhitematthew`
-- **Open an Issue**: [GitHub Issues](https://github.com/CoreGamer32D/chernobyl_unit_3/issues)
+- **Open an Issue**: [GitHub Issues](https://github.com/CoreGamer32D/Chernobyl_unit_3/issues)
 
 ##  License
 
