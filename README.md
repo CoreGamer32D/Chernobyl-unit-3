@@ -13,6 +13,7 @@ A Roblox website project dedicated to the Chernobyl Unit 3 on roblox, showcasing
 <div align="center">
   <a href="https://www.roblox.com/games/8486351960/Chernobyl-Unit-3" target="_blank">
     <img src="https://img.shields.io/badge/ROBLOX-777BB4?style=for-the-badge&logo=ROBLOX&logoColor=white" alt="ROBLOX"/>
+    click on image to go to there roblox page
   </a>
 </div>
 
