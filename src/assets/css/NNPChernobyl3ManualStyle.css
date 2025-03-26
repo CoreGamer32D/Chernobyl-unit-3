@@ -33,6 +33,17 @@
     --success-color: #10b981;
 }
 
+#LOGO {
+    width: 50px;
+    /* Adjust to your desired size */
+    height: auto;
+    /* Maintains aspect ratio */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* This won't apply to an <img>, use it on a flex container */
+}
+
 logo-container {
     display: flex;
     align-items: center;
@@ -80,6 +91,7 @@ logo-container {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid var(--border-color);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 body {
@@ -90,6 +102,8 @@ body {
     padding: 20px;
     color: var(--text-color);
     background-color: var(--ifm-background-color);
+    transition: opacity 0.6s ease-in-out;
+    opacity: 1;
 }
 
 h1, h2 {
