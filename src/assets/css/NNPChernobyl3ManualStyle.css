@@ -33,17 +33,6 @@
     --success-color: #10b981;
 }
 
-img {
-    width: 50px;
-    /* Adjust to your desired size */
-    height: auto;
-    /* Maintains aspect ratio */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    /* This won't apply to an <img>, use it on a flex container */
-}
-
 logo-container {
     display: flex;
     align-items: center;
