@@ -13,9 +13,10 @@ A Roblox website project dedicated to the Chernobyl Unit 3 on roblox, showcasing
 <div align="center">
   <a href="https://www.roblox.com/games/8486351960/Chernobyl-Unit-3" target="_blank">
     <img src="https://img.shields.io/badge/ROBLOX-777BB4?style=for-the-badge&logo=ROBLOX&logoColor=white" alt="ROBLOX"/>
-    click on image to go to there roblox page
   </a>
 </div>
+
+click on the image to go to the there roblox page
 
 ###  Technologies Used
 
@@ -45,7 +46,7 @@ A Roblox website project dedicated to the Chernobyl Unit 3 on roblox, showcasing
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/[CoreGamer32D]/Chernobyl_unit_3.git
+   git clone https://github.com/[CoreGamer32D]/Chernobyl-unit-3.git
    ```
 
 2. Open the project directory
@@ -69,7 +70,7 @@ A Roblox website project dedicated to the Chernobyl Unit 3 on roblox, showcasing
 For assistance, bug reports, or suggestions:
 
 - **Discord**: `wilhitematthew`
-- **Open an Issue**: [GitHub Issues](https://github.com/CoreGamer32D/Chernobyl_unit_3/issues)
+- **Open an Issue**: [GitHub Issues](https://github.com/CoreGamer32D/Chernobyl-unit-3/issues)
 
 ##  License
 
