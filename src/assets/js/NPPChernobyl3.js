@@ -72,3 +72,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+var viewCountElement = document.getElementById('viewCount');
+
+function getViewCount() {
+    return parseInt(localStorage.getItem('pageViews') || '0');
+}
+
+function incrementViewCount() {
+    var currentViews = getViewCount() + 1;
+    localStorage.setItem('pageViews', currentViews.toString());
+    viewCountElement.textContent = currentViews;
+}
+
+window.addEventListener('load', incrementViewCount);
