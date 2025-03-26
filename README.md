@@ -46,7 +46,7 @@ click on the image to go to the there roblox page
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/[CoreGamer32D]/Chernobyl-unit-3.git
+   git clone https://github.com/CoreGamer32D/Chernobyl-unit-3.git
    ```
 
 2. Open the project directory
