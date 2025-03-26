@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Matthieu Wilhite">
+    <meta name="description" content="Manuel de documentation">
+    <meta property="og:title" content="Documentation de l'unité 3 de Tchernobyl">
+    <meta property="og:url" content="https://Chernobyl.com/Maunal">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/CoreGamer32D/Chernobyl-unit-3/src/assets/images/azda.png">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#6F1A07">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./src/assets/images/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/assets/css/NPPChernobyl3Style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/assets/js/NPPChernobyl3.js"></script>
     <title>Manuel d'exploitation du réacteur</title>
     <link rel="stylesheet" href="../../assets/css/NNPChernobyl3ManualStyle.css" type="text/css">
 </head>
+
 <body>
-    <h1>Manuel d'exploitation du réacteur</h1>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <div class="logo-container">
+                    <img src="../../assets/images/Logo.png" alt="Logo">
+                    <span>Reactor Operations Hub</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href=".../../../../../index.html"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../Docs/index.html"><i class="fas fa-book me-1"></i> Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=".../../../../../index.html#resources"><i class="fas fa-tools me-1"></i>
+                            Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     
+    <h1>Manuel d'exploitation du réacteur</h1>
+
     <div class="toc">
         <h2>Table des matières</h2>
         <ul>
@@ -18,13 +63,15 @@
             <li><a href="#extraction-barres">Extraction des barres et atteinte de la criticité</a></li>
             <li><a href="#demarrage-tg5">Démarrage du turbogénérateur 5 et synchronisation au réseau électrique</a></li>
             <li><a href="#demarrage-tg6">Démarrage du turbogénérateur 6 et synchronisation au réseau électrique</a></li>
-            <li><a href="#commutation-electrique">Commutation électrique du transformateur au bus auxiliaire du générateur</a></li>
+            <li><a href="#commutation-electrique">Commutation électrique du transformateur au bus auxiliaire du
+                    générateur</a></li>
             <li><a href="#montee-puissance">Montée en puissance jusqu'à la demande</a></li>
             <li><a href="#systemes-auxiliaires">Systèmes auxiliaires et d'urgence</a>
                 <ul>
                     <li><a href="#injection-eau">Injection d'eau avec l'ECCS</a></li>
                     <li><a href="#demarrage-edg">Démarrage et connexion des EDG aux bus principaux</a></li>
-                    <li><a href="#desactivation-protection">Désactivation des systèmes de protection automatique</a></li>
+                    <li><a href="#desactivation-protection">Désactivation des systèmes de protection automatique</a>
+                    </li>
                 </ul>
             </li>
             <li><a href="#procedures-urgence">Procédures d'urgence</a>
@@ -81,7 +128,8 @@
         </tr>
         <tr>
             <td>AZM (АЗМ)</td>
-            <td>Protection automatique de la puissance du réacteur en plage de fonctionnement (Аварийная Защита по уровню Мощности)</td>
+            <td>Protection automatique de la puissance du réacteur en plage de fonctionnement (Аварийная Защита по
+                уровню Мощности)</td>
         </tr>
         <tr>
             <td>CR-O (БЩУ-О)</td>
@@ -143,118 +191,182 @@
 
     <h2 id="controles-preliminaires">Contrôles préliminaires</h2>
     <ol class="steps">
-        <li>Sur le panneau électrique du pupitre SIUT (voir Figure 2. Panneau électrique), vérifiez que le relais PWA-3 – 5PA est réglé sur ON (Déplacez l'interrupteur vers la DROITE)</li>
+        <li>Sur le panneau électrique du pupitre SIUT (voir Figure 2. Panneau électrique), vérifiez que le relais PWA-3
+            – 5PA est réglé sur ON (Déplacez l'interrupteur vers la DROITE)</li>
         <li>Vérifiez que le relais PWB-3 5PB est réglé sur ON.</li>
         <li>Vérifiez que le relais PWA-3 6PA est réglé sur ON.</li>
         <li>Vérifiez que le relais PWA-3 6PB est réglé sur ON.</li>
-        <li>Sur le pupitre SIUB (voir Figure 3. Pupitre SIUB), OUVRIR les MCP 11,12 et 21,22 en déplaçant les interrupteurs П1 - 3311, П1 – 3321, et П2 – 3311, П2 – 3321 vers la position OUVERT (côté DROIT) jusqu'à ce que les jauges correspondantes indiquent que les vannes sont à 100%.</li>
-        <li>DÉMARRER les MCP 11,12 et 21,22 en maintenant enfoncé le bouton ROUGE au-dessus des étiquettes ГЦН-11, ГЦН-12, ГЦН-21 et ГЦН-22 jusqu'à ce que les appareils d'ampérage (A) à profil étroit indiquent que les MCP démarrés sont à 600 ampères.</li>
-        <li>Sur le panneau le plus à droite du pupitre SIUB, vérifiez que le déchargement automatique de pression pour БС11,21,12,22 est activé (ON) en le mettant en position HORIZONTALE.</li>
+        <li>Sur le pupitre SIUB (voir Figure 3. Pupitre SIUB), OUVRIR les MCP 11,12 et 21,22 en déplaçant les
+            interrupteurs П1 - 3311, П1 – 3321, et П2 – 3311, П2 – 3321 vers la position OUVERT (côté DROIT) jusqu'à ce
+            que les jauges correspondantes indiquent que les vannes sont à 100%.</li>
+        <li>DÉMARRER les MCP 11,12 et 21,22 en maintenant enfoncé le bouton ROUGE au-dessus des étiquettes ГЦН-11,
+            ГЦН-12, ГЦН-21 et ГЦН-22 jusqu'à ce que les appareils d'ampérage (A) à profil étroit indiquent que les MCP
+            démarrés sont à 600 ampères.</li>
+        <li>Sur le panneau le plus à droite du pupitre SIUB, vérifiez que le déchargement automatique de pression pour
+            БС11,21,12,22 est activé (ON) en le mettant en position HORIZONTALE.</li>
     </ol>
-    
+
     <div class="note">
-        <p>Remarque : l'interrupteur de décharge automatique du milieu est pour les DEUX séparateurs de vapeur. Vous n'avez besoin que de celui-là.</p>
-        <p>Remarque 2 : Si 2 MCP sont déjà activés par côté, vous n'avez pas besoin d'en activer d'autres jusqu'à ce que vous atteigniez une puissance plus élevée.</p>
+        <p>Remarque : l'interrupteur de décharge automatique du milieu est pour les DEUX séparateurs de vapeur. Vous
+            n'avez besoin que de celui-là.</p>
+        <p>Remarque 2 : Si 2 MCP sont déjà activés par côté, vous n'avez pas besoin d'en activer d'autres jusqu'à ce que
+            vous atteigniez une puissance plus élevée.</p>
     </div>
 
     <h2 id="extraction-barres">Extraction des barres et atteinte de la criticité</h2>
     <ol class="steps">
-        <li>Sur le pupitre SIUR (voir Figure 4. Pupitre SIUR), TIREZ les BARRES AZ jusqu'aux CAPUCHONS D'EXTRÉMITÉ SUPÉRIEURS. Les barres AZ sont marquées par une petite lumière rouge clignotante au-dessus de leur sélecteur. Il y a 24 BARRES AZ au total. Les selsyns AZ sont toujours rouges.</li>
-        <li>TIREZ les barres PK-AZ jusqu'aux CAPUCHONS D'EXTRÉMITÉ SUPÉRIEURS. Les barres PK-AZ sont marquées par leur sélecteur clignotant. Les selsyns PK-AZ sont toujours blancs.</li>
+        <li>Sur le pupitre SIUR (voir Figure 4. Pupitre SIUR), TIREZ les BARRES AZ jusqu'aux CAPUCHONS D'EXTRÉMITÉ
+            SUPÉRIEURS. Les barres AZ sont marquées par une petite lumière rouge clignotante au-dessus de leur
+            sélecteur. Il y a 24 BARRES AZ au total. Les selsyns AZ sont toujours rouges.</li>
+        <li>TIREZ les barres PK-AZ jusqu'aux CAPUCHONS D'EXTRÉMITÉ SUPÉRIEURS. Les barres PK-AZ sont marquées par leur
+            sélecteur clignotant. Les selsyns PK-AZ sont toujours blancs.</li>
         <li>TIREZ les barres AR1, AR2, ARM à 3,5 m. Les barres AR sont vert clair.</li>
-        <li>TIREZ les barres RR, LAR, USP SELON LES BESOINS. Les barres USP sont jaunes. Les sélecteurs de barres LAR sont blancs ou bleus et sont illuminés mais ne clignotent pas. Les selsyns LAR sont toujours bleus. Les sélecteurs de barres RR sont blancs ou bleus et ne sont ni illuminés ni clignotants. Les selsyns RR sont toujours gris.</li>
-        <li>Lorsque le changement de puissance thermique dépasse 0, vous commencerez à gagner de la puissance thermique. Continuez à augmenter la puissance thermique jusqu'à environ 700 MW(t).</li>
+        <li>TIREZ les barres RR, LAR, USP SELON LES BESOINS. Les barres USP sont jaunes. Les sélecteurs de barres LAR
+            sont blancs ou bleus et sont illuminés mais ne clignotent pas. Les selsyns LAR sont toujours bleus. Les
+            sélecteurs de barres RR sont blancs ou bleus et ne sont ni illuminés ni clignotants. Les selsyns RR sont
+            toujours gris.</li>
+        <li>Lorsque le changement de puissance thermique dépasse 0, vous commencerez à gagner de la puissance thermique.
+            Continuez à augmenter la puissance thermique jusqu'à environ 700 MW(t).</li>
         <li>Lorsque vous atteignez 160 MW(t), BASCULEZ l'interrupteur АЗС en MODE FONCTIONNEMENT.</li>
         <li>Lorsque la pression dans les SS atteint 6 à 7,5 MPa, vous êtes prêt à démarrer les turbines.</li>
     </ol>
-    
+
     <div class="note">
-        <p>Remarque : Les restrictions du mode de démarrage et de fonctionnement empêchent des changements excessifs de la puissance du réacteur, de la puissance du réacteur elle-même ou de la température. En mode de démarrage, les avertissements se produisent à un changement de puissance de 20, une puissance de réacteur de 100 MW et une température de 100°C, avec des disjonctions à 30, 250 MW et 130°C. En mode de fonctionnement, les avertissements sont à un changement de puissance de 40, 3320 MW et 300°C, avec des disjonctions à 50, 3400 MW et 330°C. Vous avez 5 secondes pour corriger tout problème avant que le réacteur ne disjoncte.</p>
-        <p>Remarque 2 : L'horloge numérique N'EST PAS la jauge MW(t). La jauge MW(t) se trouve uniquement sur le pupitre SIUR.</p>
+        <p>Remarque : Les restrictions du mode de démarrage et de fonctionnement empêchent des changements excessifs de
+            la puissance du réacteur, de la puissance du réacteur elle-même ou de la température. En mode de démarrage,
+            les avertissements se produisent à un changement de puissance de 20, une puissance de réacteur de 100 MW et
+            une température de 100°C, avec des disjonctions à 30, 250 MW et 130°C. En mode de fonctionnement, les
+            avertissements sont à un changement de puissance de 40, 3320 MW et 300°C, avec des disjonctions à 50, 3400
+            MW et 330°C. Vous avez 5 secondes pour corriger tout problème avant que le réacteur ne disjoncte.</p>
+        <p>Remarque 2 : L'horloge numérique N'EST PAS la jauge MW(t). La jauge MW(t) se trouve uniquement sur le pupitre
+            SIUR.</p>
     </div>
 
     <h2 id="demarrage-tg5">Démarrage du turbogénérateur 5 et synchronisation au réseau électrique</h2>
     <ol class="steps">
-        <li>Sur le pupitre SIUT (voir Figure 1. Panneau de contrôle de la turbine), désisolez le TG-5 de la boucle de vapeur principale en déplaçant les deux VANNES D'ISOLATION vers la position DROITE jusqu'à ce que tous les voyants rouges soient allumés.</li>
-        <li>Déplacez la vanne d'ADMISSION DE VAPEUR vers la position DROITE jusqu'à ce que la vanne correspondante atteigne 15 - 17%, tout en s'assurant que l'accélération (α) ne dépasse pas 250. Faites de petits ajustements à la vanne jusqu'à ce que le régime de la turbine atteigne 3000 tr/min et que le voyant "VITESSE CORRECTE" s'allume.</li>
-        <li>Sur le panneau générateur du pupitre SIUT (voir Figure 2. Panneau électrique), activez le RELAIS EXCITATEUR sur TG-5 en déplaçant l'interrupteur vers la position DROITE.</li>
+        <li>Sur le pupitre SIUT (voir Figure 1. Panneau de contrôle de la turbine), désisolez le TG-5 de la boucle de
+            vapeur principale en déplaçant les deux VANNES D'ISOLATION vers la position DROITE jusqu'à ce que tous les
+            voyants rouges soient allumés.</li>
+        <li>Déplacez la vanne d'ADMISSION DE VAPEUR vers la position DROITE jusqu'à ce que la vanne correspondante
+            atteigne 15 - 17%, tout en s'assurant que l'accélération (α) ne dépasse pas 250. Faites de petits
+            ajustements à la vanne jusqu'à ce que le régime de la turbine atteigne 3000 tr/min et que le voyant "VITESSE
+            CORRECTE" s'allume.</li>
+        <li>Sur le panneau générateur du pupitre SIUT (voir Figure 2. Panneau électrique), activez le RELAIS EXCITATEUR
+            sur TG-5 en déplaçant l'interrupteur vers la position DROITE.</li>
         <li>Activez le BUS PRINCIPAL TG-5.</li>
-        <li>AJUSTEZ la TENSION D'EXCITATION TG-5 à 474 V en déplaçant l'interrupteur AJUSTER EXCITATION vers la position DROITE.</li>
-        <li>Sur le panneau de synchronisation (qui se trouve devant le pupitre SIUT), APPUYEZ sur le bouton SÉLECTIONNER TG-5, puis SÉLECTIONNEZ le SYNCHROSCOPE que vous souhaitez utiliser (position gauche ou droite).</li>
-        <li>Lorsque le SYNCHROSCOPE est près de la position HAUT-MILIEU, SYNCHRONISEZ TG-5 en déplaçant l'interrupteur SYNCHRONISER TG-5 vers la position DROITE. Si TG-5 ne se synchronise pas, vous avez soit essayé de fermer le disjoncteur à la mauvaise position du synchroscope, soit TG-5 se déplace trop rapidement. Essayez de maintenir la FRÉQUENCE TG-5 entre 50,01 et 50,10.</li>
-        <li>SI TG-5 se synchronise avec succès, déplacez la vanne d'ADMISSION DE VAPEUR vers la POSITION DROITE jusqu'à ce que la PUISSANCE TG-5 atteigne 150 MW(e).</li>
+        <li>AJUSTEZ la TENSION D'EXCITATION TG-5 à 474 V en déplaçant l'interrupteur AJUSTER EXCITATION vers la position
+            DROITE.</li>
+        <li>Sur le panneau de synchronisation (qui se trouve devant le pupitre SIUT), APPUYEZ sur le bouton SÉLECTIONNER
+            TG-5, puis SÉLECTIONNEZ le SYNCHROSCOPE que vous souhaitez utiliser (position gauche ou droite).</li>
+        <li>Lorsque le SYNCHROSCOPE est près de la position HAUT-MILIEU, SYNCHRONISEZ TG-5 en déplaçant l'interrupteur
+            SYNCHRONISER TG-5 vers la position DROITE. Si TG-5 ne se synchronise pas, vous avez soit essayé de fermer le
+            disjoncteur à la mauvaise position du synchroscope, soit TG-5 se déplace trop rapidement. Essayez de
+            maintenir la FRÉQUENCE TG-5 entre 50,01 et 50,10.</li>
+        <li>SI TG-5 se synchronise avec succès, déplacez la vanne d'ADMISSION DE VAPEUR vers la POSITION DROITE jusqu'à
+            ce que la PUISSANCE TG-5 atteigne 150 MW(e).</li>
         <li>Sur le panneau générateur du pupitre SIUT, ACTIVEZ le BUS AUXILIAIRE TG-5.</li>
         <li>Augmentez la puissance du réacteur à pas plus de 900 MW(t).</li>
     </ol>
-    
+
     <div class="note">
-        <p>Remarque : La turbine disjoncte à 3150 tr/min. Si votre accélération dépasse 250, elle disjonctea dans les 3,2 secondes, bien que le délai se raccourcisse à mesure que votre accélération augmente.</p>
-        <p>Remarque 2 : Vous pouvez également surveiller la tension du stator pour obtenir l'excitation correcte. Elle doit être à 20 kV, bien que la tension du stator se déplace si le régime de votre turbine se déplace, alors vérifiez si elle est à la bonne vitesse.</p>
+        <p>Remarque : La turbine disjoncte à 3150 tr/min. Si votre accélération dépasse 250, elle disjonctea dans les
+            3,2 secondes, bien que le délai se raccourcisse à mesure que votre accélération augmente.</p>
+        <p>Remarque 2 : Vous pouvez également surveiller la tension du stator pour obtenir l'excitation correcte. Elle
+            doit être à 20 kV, bien que la tension du stator se déplace si le régime de votre turbine se déplace, alors
+            vérifiez si elle est à la bonne vitesse.</p>
     </div>
 
     <h2 id="demarrage-tg6">Démarrage du turbogénérateur 6 et synchronisation au réseau électrique</h2>
     <ol class="steps">
-        <li>Désisolez le TG-6 de la boucle de vapeur principale en déplaçant les deux VANNES D'ISOLATION vers la position DROITE jusqu'à ce que tous les voyants rouges soient allumés.</li>
-        <li>Déplacez la vanne d'ADMISSION DE VAPEUR vers la position DROITE jusqu'à ce que la vanne correspondante atteigne 15 - 17%, tout en s'assurant que l'accélération (α) ne dépasse pas 250. Faites de petits ajustements à la vanne jusqu'à ce que le régime de la turbine atteigne 3000 tr/min et que le voyant "VITESSE CORRECTE" s'allume.</li>
+        <li>Désisolez le TG-6 de la boucle de vapeur principale en déplaçant les deux VANNES D'ISOLATION vers la
+            position DROITE jusqu'à ce que tous les voyants rouges soient allumés.</li>
+        <li>Déplacez la vanne d'ADMISSION DE VAPEUR vers la position DROITE jusqu'à ce que la vanne correspondante
+            atteigne 15 - 17%, tout en s'assurant que l'accélération (α) ne dépasse pas 250. Faites de petits
+            ajustements à la vanne jusqu'à ce que le régime de la turbine atteigne 3000 tr/min et que le voyant "VITESSE
+            CORRECTE" s'allume.</li>
         <li>Activez le RELAIS EXCITATEUR sur TG-6 en déplaçant l'interrupteur vers la position DROITE.</li>
-        <li>AJUSTEZ la TENSION D'EXCITATION TG-6 à 474 V en déplaçant l'interrupteur AJUSTER EXCITATION vers la position DROITE.</li>
+        <li>AJUSTEZ la TENSION D'EXCITATION TG-6 à 474 V en déplaçant l'interrupteur AJUSTER EXCITATION vers la position
+            DROITE.</li>
         <li>Activez le BUS PRINCIPAL TG-6.</li>
-        <li>APPUYEZ sur le bouton SÉLECTIONNER TG-6, puis SÉLECTIONNEZ le SYNCHROSCOPE que vous souhaitez utiliser (position gauche ou droite).</li>
-        <li>Lorsque le SYNCHROSCOPE est près de la position HAUT-MILIEU, SYNCHRONISEZ TG-6 en déplaçant l'interrupteur SYNCHRONISER TG-6 vers la position DROITE. Si TG-6 ne se synchronise pas, vous avez soit essayé de fermer le disjoncteur à la mauvaise position du synchroscope, soit TG-6 se déplace trop rapidement. Essayez de maintenir la FRÉQUENCE TG-6 entre 50,01 et 50,10.</li>
-        <li>SI TG-6 se synchronise avec succès, déplacez la vanne d'ADMISSION DE VAPEUR vers la POSITION DROITE jusqu'à ce que la PUISSANCE TG-6 atteigne 150 MW(e).</li>
+        <li>APPUYEZ sur le bouton SÉLECTIONNER TG-6, puis SÉLECTIONNEZ le SYNCHROSCOPE que vous souhaitez utiliser
+            (position gauche ou droite).</li>
+        <li>Lorsque le SYNCHROSCOPE est près de la position HAUT-MILIEU, SYNCHRONISEZ TG-6 en déplaçant l'interrupteur
+            SYNCHRONISER TG-6 vers la position DROITE. Si TG-6 ne se synchronise pas, vous avez soit essayé de fermer le
+            disjoncteur à la mauvaise position du synchroscope, soit TG-6 se déplace trop rapidement. Essayez de
+            maintenir la FRÉQUENCE TG-6 entre 50,01 et 50,10.</li>
+        <li>SI TG-6 se synchronise avec succès, déplacez la vanne d'ADMISSION DE VAPEUR vers la POSITION DROITE jusqu'à
+            ce que la PUISSANCE TG-6 atteigne 150 MW(e).</li>
         <li>ACTIVEZ le BUS AUXILIAIRE TG-6.</li>
     </ol>
 
     <h2 id="commutation-electrique">Commutation électrique du transformateur au bus auxiliaire du générateur</h2>
     <ol class="steps">
-        <li>Sur le panneau électrique du pupitre SIUT, ACTIVEZ le relais 5PA en déplaçant l'interrupteur vers la position DROITE.</li>
+        <li>Sur le panneau électrique du pupitre SIUT, ACTIVEZ le relais 5PA en déplaçant l'interrupteur vers la
+            position DROITE.</li>
         <li>DÉSACTIVEZ RAPIDEMENT LE RELAIS PWA-3 – 5PA OU LE DISJONCTEUR DISJONCETRA. VOUS AVEZ 4 SECONDES.</li>
         <li>Répétez les mêmes étapes avec les relais 5PB à 6PB.</li>
     </ol>
-    
+
     <div class="note">
-        <p>Remarque : Ne pas passer de l'alimentation du transformateur à l'alimentation du générateur causera des problèmes d'alimentation avec les pompes, les transformateurs n'auront pas assez de capacité pour les alimenter à haute puissance thermique.</p>
+        <p>Remarque : Ne pas passer de l'alimentation du transformateur à l'alimentation du générateur causera des
+            problèmes d'alimentation avec les pompes, les transformateurs n'auront pas assez de capacité pour les
+            alimenter à haute puissance thermique.</p>
     </div>
 
     <h2 id="montee-puissance">Montée en puissance jusqu'à la demande</h2>
     <ol class="steps">
-        <li>Augmentez la puissance du réacteur selon les besoins, tout en restant dans les limites des réglementations de changement de puissance thermique.</li>
-        <li>Augmentez la puissance de la turbine à mesure que la puissance thermique augmente, assurez-vous que la pression dans les SS ne descend pas en dessous de 6 MPa.</li>
+        <li>Augmentez la puissance du réacteur selon les besoins, tout en restant dans les limites des réglementations
+            de changement de puissance thermique.</li>
+        <li>Augmentez la puissance de la turbine à mesure que la puissance thermique augmente, assurez-vous que la
+            pression dans les SS ne descend pas en dessous de 6 MPa.</li>
         <li>À 1600 MW(t) - 1920 MW(t), ACTIVEZ une MCP supplémentaire par côté, si nécessaire.</li>
-        <li>Lorsque vous approchez de la demande, réduisez le taux de changement de puissance thermique, lorsque vous êtes à la demande, arrêtez de changer la puissance thermique. Assurez-vous que les charges TG-5 et TG-6 sont équilibrées, et que la pression dans les SS n'est pas inférieure à 6 MPa.</li>
+        <li>Lorsque vous approchez de la demande, réduisez le taux de changement de puissance thermique, lorsque vous
+            êtes à la demande, arrêtez de changer la puissance thermique. Assurez-vous que les charges TG-5 et TG-6 sont
+            équilibrées, et que la pression dans les SS n'est pas inférieure à 6 MPa.</li>
     </ol>
-    
+
     <div class="note">
-        <p>Défi : Après que les deux turbines sont synchronisées, les opérateurs plus expérimentés peuvent essayer d'exploiter le réacteur sans utiliser le déchargement automatique pour plus de réalisme. Si les turbines et le réacteur sont correctement configurés, vous ne devriez pas avoir besoin des déchargements automatiques.</p>
+        <p>Défi : Après que les deux turbines sont synchronisées, les opérateurs plus expérimentés peuvent essayer
+            d'exploiter le réacteur sans utiliser le déchargement automatique pour plus de réalisme. Si les turbines et
+            le réacteur sont correctement configurés, vous ne devriez pas avoir besoin des déchargements automatiques.
+        </p>
     </div>
 
     <h2 id="systemes-auxiliaires">Systèmes auxiliaires et d'urgence</h2>
-    <p>Cette section couvre le fonctionnement de l'ECCS, des EDG, et la désactivation ou l'activation des systèmes de protection automatique du réacteur. Ces systèmes sont situés sur le panneau "САОР" à l'arrière de la salle de contrôle.</p>
+    <p>Cette section couvre le fonctionnement de l'ECCS, des EDG, et la désactivation ou l'activation des systèmes de
+        protection automatique du réacteur. Ces systèmes sont situés sur le panneau "САОР" à l'arrière de la salle de
+        contrôle.</p>
 
     <h3 id="injection-eau">Injection d'eau avec l'ECCS</h3>
-    <p>Activez "Injection SAOR – D" et "Injection SAOR – G" en déplaçant leurs interrupteurs vers la position DROITE jusqu'à ce que leur voyant rouge respectif commence à clignoter.</p>
+    <p>Activez "Injection SAOR – D" et "Injection SAOR – G" en déplaçant leurs interrupteurs vers la position DROITE
+        jusqu'à ce que leur voyant rouge respectif commence à clignoter.</p>
     <p>Il y a 2 sous-systèmes pour l'ECCS. Chacun injecte 1400 m³/h d'eau.</p>
-    
+
     <div class="warning">
-        <p>Remarque : L'ACTIVATION DE L'INJECTION ECCS FERA DISJONCTER LE RÉACTEUR. NE L'UTILISEZ PAS SI VOUS N'EN AVEZ PAS BESOIN.</p>
+        <p>Remarque : L'ACTIVATION DE L'INJECTION ECCS FERA DISJONCTER LE RÉACTEUR. NE L'UTILISEZ PAS SI VOUS N'EN AVEZ
+            PAS BESOIN.</p>
     </div>
 
     <h3 id="demarrage-edg">Démarrage et connexion des EDG aux bus principaux</h3>
     <ol class="steps">
-        <li>Activez l'"Alimentation en carburant" et l'"Allumage" en déplaçant leurs interrupteurs vers la position DROITE.</li>
-        <li>Lorsque le voyant rouge au-dessus de l'interrupteur "Allumage" cesse de clignoter et reste rouge, vous pouvez activer l'interrupteur "Connexion bus" en le déplaçant vers la position DROITE.</li>
-        <li>Lorsque les EDG sont connectés, ils prendront la charge des transformateurs PWA-3 ou PWB-3, ce qui signifie que les relais PWA-3 et PW3-B doivent être actifs pour que les EDG prennent effet.</li>
+        <li>Activez l'"Alimentation en carburant" et l'"Allumage" en déplaçant leurs interrupteurs vers la position
+            DROITE.</li>
+        <li>Lorsque le voyant rouge au-dessus de l'interrupteur "Allumage" cesse de clignoter et reste rouge, vous
+            pouvez activer l'interrupteur "Connexion bus" en le déplaçant vers la position DROITE.</li>
+        <li>Lorsque les EDG sont connectés, ils prendront la charge des transformateurs PWA-3 ou PWB-3, ce qui signifie
+            que les relais PWA-3 et PW3-B doivent être actifs pour que les EDG prennent effet.</li>
     </ol>
-    
+
     <div class="note">
         <p>Chaque EDG produit 8 MW(e). Il y a 3 EDG au total.</p>
     </div>
 
     <h3 id="desactivation-protection">Désactivation des systèmes de protection automatique</h3>
-    <p>Appelez le téléphone sur le pupitre SIUR. Lorsque l'opérateur SKALA répond, dites "Activer" / "Désactiver" dans le chat du jeu. Lorsque l'opérateur SKALA vous demande de confirmer, dites "Oui" dans le chat du jeu.</p>
+    <p>Appelez le téléphone sur le pupitre SIUR. Lorsque l'opérateur SKALA répond, dites "Activer" / "Désactiver" dans
+        le chat du jeu. Lorsque l'opérateur SKALA vous demande de confirmer, dites "Oui" dans le chat du jeu.</p>
 
     <h2 id="procedures-urgence">Procédures d'urgence</h2>
-    
+
     <h3 id="disjonction-tg5">Disjonction du TG-5</h3>
     <p><strong>Actions attendues de l'opérateur</strong></p>
     <ol class="steps">
@@ -274,23 +386,28 @@
         </li>
         <li>Si l'alimentation n'est toujours pas rétablie :
             <ul>
-                <li>Vérifier que le transformateur PWA-3 est connecté. Il y aura un voyant vert allumé au-dessus de l'interrupteur si le transformateur PWA-3 est connecté.</li>
+                <li>Vérifier que le transformateur PWA-3 est connecté. Il y aura un voyant vert allumé au-dessus de
+                    l'interrupteur si le transformateur PWA-3 est connecté.</li>
             </ul>
         </li>
         <li>Si l'alimentation n'est toujours pas rétablie :
             <ul>
-                <li>Démarrer et connecter les Générateurs Diesel d'Urgence (EDG) (se référer au manuel pour les instructions de démarrage et de connexion).</li>
+                <li>Démarrer et connecter les Générateurs Diesel d'Urgence (EDG) (se référer au manuel pour les
+                    instructions de démarrage et de connexion).</li>
             </ul>
         </li>
-        <li>Si le TG-5 est endommagé (2 voyants de vibration de palier allumés ou plus) en raison d'un déchargement d'urgence :
+        <li>Si le TG-5 est endommagé (2 voyants de vibration de palier allumés ou plus) en raison d'un déchargement
+            d'urgence :
             <ul>
-                <li>Appeler le technicien de turbine pour réparer le TG-5. Ne pas tenter de démarrer une turbine endommagée.</li>
+                <li>Appeler le technicien de turbine pour réparer le TG-5. Ne pas tenter de démarrer une turbine
+                    endommagée.</li>
             </ul>
         </li>
     </ol>
-    
+
     <div class="note">
-        <p>Remarque : Lors d'une disjonction inattendue du TG-5, une disjonction du réacteur se produira en raison de la perte d'alimentation du relais 5PB.</p>
+        <p>Remarque : Lors d'une disjonction inattendue du TG-5, une disjonction du réacteur se produira en raison de la
+            perte d'alimentation du relais 5PB.</p>
     </div>
 
     <h3 id="disjonction-tg6">Disjonction du TG-6</h3>
@@ -312,24 +429,30 @@
         </li>
         <li>Si l'alimentation n'est toujours pas rétablie :
             <ul>
-                <li>Vérifier que le transformateur PWB-3 est connecté. Il y aura un voyant vert allumé au-dessus de l'interrupteur si le transformateur PWB-3 est connecté.</li>
+                <li>Vérifier que le transformateur PWB-3 est connecté. Il y aura un voyant vert allumé au-dessus de
+                    l'interrupteur si le transformateur PWB-3 est connecté.</li>
             </ul>
         </li>
         <li>Si l'alimentation n'est toujours pas rétablie :
             <ul>
-                <li>Démarrer et connecter les Générateurs Diesel d'Urgence (EDG) (se référer au manuel pour les instructions de démarrage et de connexion).</li>
+                <li>Démarrer et connecter les Générateurs Diesel d'Urgence (EDG) (se référer au manuel pour les
+                    instructions de démarrage et de connexion).</li>
             </ul>
         </li>
-        <li>Si le TG-6 est endommagé (2 voyants de vibration de palier allumés ou plus) en raison d'un déchargement d'urgence :
+        <li>Si le TG-6 est endommagé (2 voyants de vibration de palier allumés ou plus) en raison d'un déchargement
+            d'urgence :
             <ul>
-                <li>Appeler le technicien de turbine pour réparer le TG-6. Ne pas tenter de démarrer une turbine endommagée.</li>
+                <li>Appeler le technicien de turbine pour réparer le TG-6. Ne pas tenter de démarrer une turbine
+                    endommagée.</li>
             </ul>
         </li>
     </ol>
-    
+
     <div class="note">
-        <p>Remarque : Lors d'une disjonction inattendue du TG-6, une excursion de puissance du réacteur peut se produire en raison de la perte de débit du cœur.</p>
-        <p>Remarque : Une disjonction automatique du réacteur peut se produire à la suite de l'excursion de puissance du réacteur.</p>
+        <p>Remarque : Lors d'une disjonction inattendue du TG-6, une excursion de puissance du réacteur peut se produire
+            en raison de la perte de débit du cœur.</p>
+        <p>Remarque : Une disjonction automatique du réacteur peut se produire à la suite de l'excursion de puissance du
+            réacteur.</p>
     </div>
 
     <h3 id="panne-transformateur">Panne du transformateur de démarrage</h3>
@@ -338,7 +461,8 @@
         <li>Si TG-5 et TG-6 ne sont pas connectés aux relais :
             <ul>
                 <li>Démarrer et connecter DG-1, DG-2 et DG-3.</li>
-                <li>S'assurer que les relais PWA/B sont connectés. Ils sont essentiels pour que les DG alimentent les relais.</li>
+                <li>S'assurer que les relais PWA/B sont connectés. Ils sont essentiels pour que les DG alimentent les
+                    relais.</li>
                 <li>Réduire les MCP à une configuration 1x1.</li>
             </ul>
         </li>
@@ -350,14 +474,17 @@
         </li>
         <li>Si TG-5 et TG-6 fournissent de l'énergie aux relais, aucune action de l'opérateur n'est requise.</li>
     </ol>
-    
+
     <div class="note">
-        <p>La panne du transformateur doit être attendue, il n'y a rien que les opérateurs puissent faire pour la réparer manuellement.</p>
+        <p>La panne du transformateur doit être attendue, il n'y a rien que les opérateurs puissent faire pour la
+            réparer manuellement.</p>
     </div>
-    
-    <p>Même pendant une panne de transformateur, il est possible de démarrer le réacteur après sa disjonction. Pour y parvenir :</p>
+
+    <p>Même pendant une panne de transformateur, il est possible de démarrer le réacteur après sa disjonction. Pour y
+        parvenir :</p>
     <ol class="steps">
-        <li>S'assurer que le débit du cœur est supérieur à 10 000 m³/h sur chaque boucle en démarrant l'injection SAOR.</li>
+        <li>S'assurer que le débit du cœur est supérieur à 10 000 m³/h sur chaque boucle en démarrant l'injection SAOR.
+        </li>
         <li>Tirer les barres normalement.</li>
         <li>Stabiliser la puissance du réacteur à 1000 MW.</li>
         <li>Faire monter les turbines normalement, 2000 tr/min ou plus sont nécessaires.</li>
@@ -366,14 +493,17 @@
         <li>Si une configuration de pompe 2x2 peut être établie :
             <ul>
                 <li>Désactiver les pompes SAOR.</li>
-                <li>Ajuster la charge de vapeur ou la puissance du réacteur selon les besoins pour maintenir une configuration de pompe 2x2.</li>
+                <li>Ajuster la charge de vapeur ou la puissance du réacteur selon les besoins pour maintenir une
+                    configuration de pompe 2x2.</li>
             </ul>
         </li>
     </ol>
-    
-    <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--ifm-hr-border-color); text-align: center; color: var(--text-color-secondary);">
+
+    <footer
+        style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--ifm-hr-border-color); text-align: center; color: var(--text-color-secondary);">
         <p>Redesign - Lurmog</p>
         <p>Manuel d'exploitation - Avenir_3Bravo</p>
     </footer>
 </body>
+
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactor Operations Hub</title>
+    <meta name="author" content="Matthew Wilhite">
+    <meta name="description" content="Documentation - Manual">
+    <meta property="og:title" content="Chernobyl Unit 3 - Documentation">
+    <meta property="og:url" content="https://Chernobyl.com/Maunal">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/CoreGamer32D/Chernobyl-unit-3/src/assets/images/azda.png">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#6F1A07">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/NPPChernobyl3Style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/NPPChernobyl3.js"></script>
+</head>
+
+<body>
+    <div class="bg-particle" style="width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="bg-particle" style="width: 200px; height: 200px; top: 40%; right: 10%; animation-delay: 5s;"></div>
+    <div class="bg-particle" style="width: 250px; height: 250px; bottom: 10%; left: 20%; animation-delay: 10s;"></div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <div class="logo-container">
+                    <img src="../assets/images/Logo.png" alt="Logo">
+                    <span>Reactor Operations Hub</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-book me-1"></i> Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#resources"><i class="fas fa-tools me-1"></i>
+                            Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="documentation" class="cards-container">
+        <div class="container">
+            <h2 class="section-title animate-fadeIn">Available Manuals</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-slideInLeft delay-100">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <div class="flag-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+                                    class="flag" alt="UK Flag">
+                            </div>
+                            <h3 class="card-title">English Manual</h3>
+                            <span class="status-badge available">
+                                <span class="status-indicator"></span>
+                                Available
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Complete operational instructions in English for reactor startup, control procedures,
+                                emergency responses, and safety protocols. Updated with latest technical specifications
+                                and regulatory requirements.
+                            </p>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>Doc Format</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Last Updated: Mar 2025</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="../Manual/English/index.html" class="btn btn-primary w-100">
+                                    <i class="fas fa-book-open"></i> View Manual
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-fadeIn delay-200">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <div class="flag-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+                                    class="flag" alt="French Flag">
+                            </div>
+                            <h3 class="card-title">Manuel Français</h3>
+                            <span class="status-badge available">
+                                <span class="status-indicator"></span>
+                                Available
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Instructions complètes en français pour le démarrage du réacteur, les procédures de
+                                contrôle, les réponses d'urgence et les protocoles de sécurité. Mise à jour avec les
+                                dernières spécifications techniques.
+                            </p>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>Formater le document</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Mis à jour: Mar 2025</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="../Manual/French/index.html" class="btn btn-primary w-100">
+                                    <i class="fas fa-book-open"></i> Voir le Manuel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</body>
+
+</html>

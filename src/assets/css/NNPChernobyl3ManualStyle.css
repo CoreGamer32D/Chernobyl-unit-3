@@ -8,7 +8,7 @@
     --ifm-color-primary-lightest: #4fddbf;
     --ifm-code-font-size: 95%;
     --ifm-background-color: #1b1b1d;
-    --ifm-background-surface-color: #242526;
+    --ifm-background-surface-color: #252627;
     --ifm-hr-border-color: #444950;
     --text-color: #f5f6f7;
     --text-color-secondary: #d0d0d0;
@@ -18,6 +18,79 @@
     --warning-border: #822;
     --table-stripe: #39393b;
     --header-color: var(--ifm-color-primary);
+    --primary-color: #25c2a0;
+    --primary-dark: #1fa588;
+    --primary-light: #3ed6b5;
+    --accent-color: #ff7b5a;
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --border-color: #334155;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --card-bg: #1e293b;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --success-color: #10b981;
+}
+
+img {
+    width: 50px;
+    /* Adjust to your desired size */
+    height: auto;
+    /* Maintains aspect ratio */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* This won't apply to an <img>, use it on a flex container */
+}
+
+logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    animation: pulse 2s infinite;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+.navbar {
+    background-color: rgba(37,38,39,1.000);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border-color);
 }
 
 body {
