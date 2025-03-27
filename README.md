@@ -29,17 +29,14 @@ click on the image to go to the there roblox page
 
 ##  Features
 
-- Immersive Chernobyl-themed Roblox experience
 - Responsive web design
 - Bootstrap and Tailwind CSS integration
-- Historical content and interactive elements
 
 ##  Getting Started
 
 ### Prerequisites
 
 - Web browser
-- Roblox account
 - Basic understanding of web technologies
 
 ### Installation
