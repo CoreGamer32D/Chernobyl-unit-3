@@ -37,7 +37,6 @@ click on the image to go to the there roblox page
 ### Prerequisites
 
 - Web browser
-- Roblox account
 - Basic understanding of web technologies
 
 ### Installation
