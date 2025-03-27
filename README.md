@@ -74,7 +74,7 @@ For assistance, bug reports, or suggestions:
 
 ##  License
 
-[Specify your license here, e.g., MIT License]
+Please read the [README.md](README.md)
 
 ##  Contributions
 
